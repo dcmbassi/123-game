@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import TileList from './components/TileList';
+import Board from './components/Board';
+import { GameProvider } from './context/gameContext';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GameProvider>
+        <Header />
+        <section className='main-container'>
+          <div className='list-container'>
+            <TileList />
+          </div>
+          <div className='board-container'>
+            <Board />
+          </div>
+        </section>
+      </GameProvider>
+    </>
   );
 }
 
